@@ -3,6 +3,9 @@ import service.captiongen as capgen
 
 app = Flask(__name__)
 
+def hello():
+    return 'Hello, World!'
+
 @app.route('/', methods=['GET'])
 def home():
     result = capgen.hello()
