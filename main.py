@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
+import service.captiongen as capgen
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-	return jsonify({'message': 'API is working!'})
+    result = capgen.hello()
+    return jsonify({'message': result})
 
 @app.route('/books', methods=['GET'])
 def get_books():
